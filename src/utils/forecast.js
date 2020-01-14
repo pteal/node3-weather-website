@@ -15,7 +15,8 @@ const forecast = (lat, lon, callback) => {
         }else if(body.error){
             callback('Unable to find location!', undefined)
         }else{
-            callback(undefined, body.daily.summary)
+            console.log(url)
+            callback(undefined, body.daily.summary + '  Max temp: ' + body.daily.data[1].temperatureMax + ' degrees.')
         }
     })
 }
